@@ -1,0 +1,89 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  text-decoration: none;
+  list-style-type: none;
+}
+
+.drop-down, .fly-out {
+  display: none;
+}
+
+nav {
+  background-color: #222222;
+  text-align: left;
+}
+
+nav .top-level {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  list-style: none;
+}
+
+nav .top-level li {
+  color: honeydew;
+  width: 100px;
+  margin: 0px;
+  padding: 10px;
+}
+
+nav .top-level li a {
+  color: inherit;
+}
+
+nav .top-level li:hover {
+  color: #8ab299;
+}
+
+nav .top-level li:hover .drop-down {
+  display: block;
+  position: absolute;
+  background-color: #5b9279;
+  margin-top: 10px;
+  margin-left: -15px;
+}
+
+nav .top-level li:hover .drop-down .fly-out {
+  display: none;
+}
+
+nav .top-level li:hover .drop-down ul {
+  display: block;
+  margin: 10px;
+}
+
+nav .top-level li:hover .drop-down li {
+  width: 180px;
+}
+
+nav .top-level li:hover .drop-down li:hover {
+  color: honeydew;
+  background-color: #8ab299;
+}
+
+nav .top-level li:hover .drop-down li:hover .fly-out {
+  display: block;
+  position: absolute;
+  background-color: #8ab299;
+  margin-top: -28px;
+  margin-left: 190px;
+}
+
+nav .top-level li:hover .drop-down li:hover .fly-out li .fly-out {
+  display: none;
+}
+
+nav .top-level li:hover .drop-down li:hover .fly-out li:hover {
+  background-color: #96c2ae;
+}
+
+nav .top-level li:hover .drop-down li:hover .fly-out li:hover .fly-out {
+  display: block;
+  position: absolute;
+  background-color: #8ab299;
+  margin-top: -28px;
+  margin-left: 190px;
+}
+/*# sourceMappingURL=styles.css.map */

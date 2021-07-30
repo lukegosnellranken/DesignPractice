@@ -1,0 +1,101 @@
+// Use only scss to create a horizontal dropdown that has flyouts.  Do not worry about responsive for this exercise.
+
+
+// Variables
+$nav-dark: rgb(34, 34, 34);
+$nav-light: rgb(240, 255, 240);
+$menu-green-dark: rgb(91, 146, 121);
+$menu-green: rgb(138, 178, 153);
+$menu-green-light: rgb(150, 194, 174);
+
+// Global styles
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    text-decoration: none;
+    list-style-type: none;
+}
+
+// Hide drop down and fly out menus
+.drop-down, .fly-out {
+    display: none;
+}
+
+// Nested styling for navigation. Drop down and fly out menus are hidden until associated list items are hovered over.
+nav {
+    background-color: $nav-dark;
+    text-align: left;
+
+    .top-level {
+        display: inline-flex;
+        list-style: none;
+
+        li {
+            color: $nav-light;
+            width: 100px;
+            margin: 0px;
+            padding: 10px;
+
+            a {
+                color: inherit;
+            }
+
+            &:hover {
+                color: $menu-green;
+
+                .drop-down {
+                    display: block;
+                    position: absolute;
+                    background-color: $menu-green-dark;
+                    margin-top: 10px;
+                    margin-left: -15px;
+
+                    .fly-out {
+                        display: none;
+                    }
+
+                    ul {
+                        display: block;
+                        margin: 10px;
+                    }
+
+                    li {
+                        width: 180px;
+
+                        &:hover {
+                            color: $nav-light;
+                            background-color: $menu-green;
+
+                            .fly-out {
+                                display: block;
+                                position: absolute;
+                                background-color: $menu-green;
+                                margin-top: -28px;
+                                margin-left: 190px;
+
+                                li {
+                                    .fly-out {
+                                        display: none;
+                                    }
+
+                                    &:hover {
+                                        background-color: $menu-green-light;
+                                        
+                                        .fly-out {
+                                            display: block;
+                                            position: absolute;
+                                            background-color: $menu-green;
+                                            margin-top: -28px;
+                                            margin-left: 190px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
